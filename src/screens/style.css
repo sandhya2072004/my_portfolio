@@ -1,0 +1,96 @@
+/* styles.css or inside your component's CSS */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.animat-bounce-icon {
+    animation: bounce 1s infinite;
+}
+
+
+/* style.css */
+/* style.css */
+/* .starry-bg {
+    background-color: #000;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
+    min-height: 100vh;
+} */
+
+.paragraph-container {
+    border-left: 4px solid #333;
+    /* vertical line */
+    padding-left: 20px;
+    margin: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 700px;
+}
+
+.paragraph-container::first-letter {
+    font-size: 3rem;
+    float: left;
+    line-height: 1;
+    padding-right: 8px;
+    color: #000;
+    font-weight: bold;
+}
+
+@keyframes growLine {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.animate-growLine {
+    animation: growLine 2s ease-out forwards; }
+
+/* .box{
+
+    border-left: 4px solid black;
+    margin-left: 30px;
+} */
+
+
+@keyframes growLine {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.outside-vertical-line {
+    width: 4px;
+    background: repeating-linear-gradient(to bottom,
+            #960D51,
+            #960D51 10px,
+            transparent 10px,
+            transparent 20px);
+    animation: growLine 2s ease-out forwards;
+}
+
+.drop-cap::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    float: left;
+    padding-right: 8px;
+    line-height: 1;
+    color: #960D51; }

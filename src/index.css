@@ -1,0 +1,47 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@keyframes growLine {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+.outside-vertical-line {
+  width: 4px;
+  background: repeating-linear-gradient(to bottom,
+      #960D51,
+      #960D51 10px,
+      transparent 10px,
+      transparent 20px);
+  animation: growLine 2s ease-out forwards;
+}
+
+.drop-cap::first-letter {
+  font-size: 3rem;
+  font-weight: bold;
+  float: left;
+  padding-right: 8px;
+  line-height: 1;
+  color: #960D51;
+}
