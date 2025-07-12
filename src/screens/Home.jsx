@@ -64,14 +64,13 @@ const fadeIn = {
 
 
 export default function Home() {
-  const theme = useTheme(); // ✅ Moved up
+  const theme = useTheme(); 
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorEl, setAnchorEl] = useState(null);
   const { toggleTheme, mode } = useContext(ThemeContext);
 
 
   const handleMenu = (event) => setAnchorEl(event.currentTarget);
-  // const handleClose = () => setAnchorEl(null);
 
   const titles = [
     "Full Stack Developer",
@@ -197,7 +196,7 @@ export default function Home() {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      handleClose(); // close menu on mobile
+      handleClose(); 
     }
   };
 
@@ -218,14 +217,8 @@ export default function Home() {
           <Typography
             variant="h6"
             sx={{
-              // background: 'linear-gradient(90deg, #0A66C2, #4A90E2, #0072b1)',
-              // backgroundClip: 'text',
-              // WebkitBackgroundClip: 'text',
-              // WebkitTextFillColor: 'transparent',
               fontWeight: "bold",
-              color: "#960D51"
-            }}
-          >
+              color: "#960D51"}}>
             Miss Sandhya..
           </Typography>
 
@@ -233,13 +226,7 @@ export default function Home() {
           
 
 
-          {/* <Button
-            onClick={toggleTheme}
-            variant="outlined"
-            sx={{ textTransform: "none", borderRadius: "20px", ml: 2 }}
-          >
-            {mode === "light" ? "Dark Mode" : "Light Mode"}
-          </Button> */}
+         
 
           <IconButton
             onClick={toggleTheme}
@@ -294,15 +281,15 @@ export default function Home() {
                     onMouseEnter={(e) => {
                       e.target.style.textDecoration = "underline";
                       e.target.style.textDecorationColor = "#960D51";
-                      e.target.style.color = "#960D51"; // ✅ Set hover text color to yellow
+                      e.target.style.color = "#960D51"; 
                     }}
                     onMouseLeave={(e) => {
                       e.target.style.textDecoration = "none";
-                      e.target.style.color = "#000"; // ✅ Reset to original color
+                      e.target.style.color = "#000"; 
                     }}
                     onFocus={(e) => {
                       e.target.style.textDecoration = "underline";
-                      e.target.style.textDecorationColor = "#960D51"; // ✅ Corrected (was invalid before)
+                      e.target.style.textDecorationColor = "#960D51"; 
                       e.target.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.2)";
                     }}
                     onBlur={(e) => {
@@ -610,7 +597,6 @@ export default function Home() {
             fontWeight: "bold",
             mb: 4,
             textAlign: "center",
-            // color: "#1565c0",
             color:"black"
           }}
         >
@@ -620,14 +606,11 @@ export default function Home() {
 
           <Box
             sx={{
-              // width: "100%",
-              // maxWidth: "1000px",
+              
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              // backgroundColor: "#fff",
-              // borderRadius: 3,
-              // boxShadow: 4,
+             
               padding: { xs: 3, md: 6 },
             }}
           >
@@ -636,7 +619,6 @@ export default function Home() {
             <Box
               sx={{
                 width: "100%",
-                // height:"350px",
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
                 gap: 4,
@@ -645,7 +627,6 @@ export default function Home() {
             >
               <Box
                 sx={{
-                  // background: "red",
                   height:"300px",
                   flex: 1,
                   display: "flex",
@@ -666,7 +647,6 @@ export default function Home() {
 
               <Box
                 sx={{
-                  // background: "yellow",
                   height: "300px",
                   borderRadius: 3,
                   boxShadow: 4,
@@ -853,19 +833,14 @@ export default function Home() {
 
             <Box
               sx={{
-                // bgcolor: "lightgreen",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
                 textAlign: "center",
                 width: 260,
-                boxShadow: 4
-
-              }}
-            >
+                boxShadow: 4}}>
               <InstagramIcon sx={{
-                fontSize: 30, mb: 1, color: "#960D51"
- }} />
+                fontSize: 30, mb: 1, color: "#960D51"}} />
               <h2 className="text-xl font-semibold">Instagram:</h2>
               <p className="text-lg">_sandhya_sahu4</p>
             </Box>
@@ -875,57 +850,40 @@ export default function Home() {
           <div className=" w-full max-w-5xl rounded-lg p-6 text-black flex flex-col md:flex-row justify-around items-center gap-6">
             <Box
               sx={{
-                // bgcolor: "red",
                 p: 2,
                 borderRadius: 2,
                 textAlign: "center",
                 width: 260,
                 color: "black",
-                boxShadow: 4
-
-              }}
-            >
-              <LinkedInIcon sx={{
-                fontSize: 30, mb: 1, color: "#960D51"
- }} />
+                boxShadow: 4}}>
+              <LinkedInIcon sx={{fontSize: 30, mb: 1, color: "#960D51"}} />
               <h2 className="text-xl font-semibold">LinkedIn:</h2>
               <p className="text-lg">_sandhya_sahu4</p>
             </Box>
 
             <Box
               sx={{
-                // bgcolor: "aqua",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
                 textAlign: "center",
                 width: 260,
-                boxShadow: 4
-
-              }}
-            >
-              <GitHubIcon sx={{
-                fontSize: 30, mb: 1, color: "#960D51"
- }} />
+                boxShadow: 4}}>
+              <GitHubIcon sx={{fontSize: 30, mb: 1, color: "#960D51" }} />
               <h2 className="text-xl font-semibold">GitHub:</h2>
               <p className="text-lg">sandhya2072004</p>
             </Box>
 
             <Box
               sx={{
-                // bgcolor: "burlywood",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
                 textAlign: "center",
                 width: 260,
-                boxShadow: 4
-
-              }}
-            >
+                boxShadow: 4}}>
               <LocationOnIcon sx={{
-                fontSize: 30, mb: 1, color: "#960D51"
- }} />
+                fontSize: 30, mb: 1, color: "#960D51" }} />
               <h2 className="text-xl font-semibold">Location:</h2>
               <p className="text-lg">Bhopal</p>
             </Box>
@@ -956,19 +914,14 @@ export default function Home() {
               style={{ borderRadius: "15px" }}
               placeholder="Your Message"
               rows={4}
-              className="border-none border-transparent px-4 py-2 bg-gray-100 resize-none focus:outline-none focus:ring-0 focus:ring-pink-500 hover:shadow-md transition duration-200"
-            />
-
+              className="border-none border-transparent px-4 py-2 bg-gray-100 resize-none focus:outline-none focus:ring-0 focus:ring-pink-500 hover:shadow-md transition duration-200"/>
             <div className="flex justify-center">
               <Button
-                style={{
-                  textTransform: "none",
+                style={{textTransform: "none",
                   borderRadius: "50px",
-                  backgroundColor: "#960D51",
-                }}
+                  backgroundColor: "#960D51",}}
                 variant="contained"
-                color="error"
-              >
+                color="error">
                 Send Message
               </Button>
             </div>
