@@ -320,18 +320,6 @@ export default function Home() {
           
           )}
 
-          {/* <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button variant="outlined" sx={{ borderRadius: '30px', textTransform: 'none' }}>
-              <SaveAltIcon sx={{ height: 20 }} /> Cv
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{ borderRadius: '30px', textTransform: 'none' }}
-              onClick={() => handleScroll('contact')}
-            >
-              <PermContactCalendarIcon sx={{ height: 20 }} /> Contact
-            </Button>
-          </Box> */}
         </Toolbar>
       </AppBar>
 
