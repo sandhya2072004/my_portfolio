@@ -35,13 +35,6 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { ThemeContext } from "../ThemeContext";
 import { motion } from "framer-motion";
 
-
-
-
-
-
-
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -61,35 +54,26 @@ const fadeIn = {
   },
 };
 
-
-
 export default function Home() {
   const theme = useTheme(); 
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorEl, setAnchorEl] = useState(null);
   const { toggleTheme, mode } = useContext(ThemeContext);
-
-
   const handleMenu = (event) => setAnchorEl(event.currentTarget);
-
-  const titles = [
+   const titles = [
     "Full Stack Developer",
     "Web Developer",
     "DSA Developer",
     "Machine Learning Engineer",
     "AI Enthusiast",
-    "Open Source Contributor",
-  ];
-
+    "Open Source Contributor", ];
   const [text, setText] = useState("");
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
-
   useEffect(() => {
     const currentTitle = titles[titleIndex];
     const speed = deleting ? 50 : 100;
-
     const timeout = setTimeout(() => {
       if (!deleting) {
         setText(currentTitle.slice(0, charIndex + 1));
@@ -106,13 +90,8 @@ export default function Home() {
         }
       }
     }, speed);
-
     return () => clearTimeout(timeout);
-  },
-
-
-    [charIndex, deleting, titleIndex]);
-
+  },[charIndex, deleting, titleIndex]);
   const skills = [
     { label: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", percentage: 95, category: "Frontend" },
     { label: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", percentage: 90, category: "Frontend" },
@@ -127,7 +106,6 @@ export default function Home() {
     { label: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", percentage: 75, category: "Database" },
     { label: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", percentage: 70, category: "Database" },
   ];
-
   const categoryIcons = {
     Frontend: <WebIcon sx={{ fontSize: 30, color: "#1565c0", mb: 1 }} />,
     Backend: <DnsIcon sx={{ fontSize: 30, color: "#c2185b", mb: 1 }} />,
@@ -141,7 +119,6 @@ export default function Home() {
       />
     ),
   };
-
   const renderCategory = (title, category, color) => (
     <Box
       key={category}
@@ -187,11 +164,9 @@ export default function Home() {
         ))}
     </Box>
   );
-
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -199,7 +174,6 @@ export default function Home() {
       handleClose(); 
     }
   };
-
   const navLinks = [
     { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
@@ -208,8 +182,6 @@ export default function Home() {
     { label: 'Projects', id: 'projects' },
     { label: 'Contact', id: 'contact' },
   ];
-
-
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
       <AppBar position="fixed" sx={{ background: 'white', boxShadow: 3 }}>
@@ -221,13 +193,6 @@ export default function Home() {
               color: "#960D51"}}>
             Miss Sandhya..
           </Typography>
-
-
-          
-
-
-         
-
           <IconButton
             onClick={toggleTheme}
             sx={{
@@ -243,10 +208,6 @@ export default function Home() {
           >
             {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
-
-
-
-
           {isMobile ? (
             <>
               <IconButton size="large" color="inherit" onClick={handleMenu}>
@@ -261,8 +222,6 @@ export default function Home() {
               </Menu>
             </>
           ) : (
-
-
               <Box>
                 {["Home", "About", "Skills", "Experience", "Projects", "Contact"].map((item) => (
                   <a
@@ -301,15 +260,9 @@ export default function Home() {
                     {item}
                   </a>
                 ))}
-              </Box>
-          
-          
-          
-          )}
-
+              </Box> )}
         </Toolbar>
       </AppBar>
-
       <Toolbar /> 
 
       {/*hero Sections */}
@@ -428,7 +381,6 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </Box>
-
 
       {/*About section*/}
       <Box id="about" className="relative overflow-hidden">
@@ -668,9 +620,6 @@ export default function Home() {
           </Box>
         </div>
       </Box>
-
-
-
       {/*projects section*/}
       <Box id="projects" sx={{ px: 4, py: 8,  }}>
         <Typography
@@ -783,9 +732,7 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-
-
-
+      
       {/*contact section*/}
       <Box id="contact" sx={{ p: 4,  }}>
 
