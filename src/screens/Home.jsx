@@ -436,9 +436,10 @@ export default function Home() {
                 boxShadow: 4,
                 backgroundColor: "#ffffffcc", // semi-transparent white
                 backdropFilter: "blur(10px)",
+                overflow: "hidden"
               }}
             >
-              <div className="flex flex-col gap-4 text-left text-gray-800 text-lg leading-7">
+              <div className="flex flex-col gap-4 text-left text-gray-800 text-lg leading-7 overflow-hidden">
                 <p>
                   Hello! I'm <span className="font-semibold text-purple-600">Sandhya Sahu</span>, I am an engineering student currently in my 3rd year studying at Viswavidyalaya Engineering College Ambikapur (CG), in the field of Computer Science and Engineering (CSE).
                 </p>
@@ -567,59 +568,61 @@ export default function Home() {
             fontWeight: "bold",
             mb: 4,
             textAlign: "center",
-            // color: "#1565c0",
-            color:"black"
+            color: "black",
           }}
         >
           Experience
         </Typography>
-        <div id="experience" className=" py-10 px-4 flex  justify-center">
-          {/* <div className="hidden lg:block h-[450px] w-[10px] bg-gradient-to-b from-[#960D51] via-purple-400 to-pink-500 rounded-full animate-pulse" /> */}
 
+        <div className="py-10 px-4 flex justify-center">
           <Box
             sx={{
-
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-
               padding: { xs: 3, md: 6 },
             }}
           >
-
-
             <Box
               sx={{
                 width: "90%",
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
                 gap: 4,
-                alignItems: "center",
+                alignItems: "stretch", // 🔑 makes both boxes equal height if possible
               }}
             >
+              {/* Card 1 */}
               <Box
                 sx={{
-                  height:"300px",
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
                   borderRadius: 3,
                   boxShadow: 4,
                   padding: { xs: 3, md: 6 },
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
                   gap: 2,
+                  minHeight: "250px", // ✅ optional, ensures base height
+                  height: "auto", // ✅ adjusts to content
                 }}
               >
                 <Typography variant="h6" sx={{ fontWeight: "bold", color: "#333" }}>
                   🗓️ 1 Year of Full Stack Development
                 </Typography>
-                <Typography variant="body1" sx={{ color: "#555", fontSize: "18px", lineHeight: 1.8 }}>
-                  Over the past year, I have worked on designing and developing responsive web applications using the MERN stack — MongoDB, Express.js, React, and Node.js. I focused on frontend UI/UX and backend RESTful API integration.
+                <Typography
+                  variant="body1"
+                  sx={{ color: "#555", fontSize: "18px", lineHeight: 1.8 }}
+                >
+                  Over the past year, I have worked on designing and developing
+                  responsive web applications using the MERN stack — MongoDB,
+                  Express.js, React, and Node.js. I focused on frontend UI/UX and
+                  backend RESTful API integration.
                 </Typography>
               </Box>
 
+              {/* Card 2 */}
               <Box
                 sx={{
-                  height: "300px",
                   borderRadius: 3,
                   boxShadow: 4,
                   padding: { xs: 3, md: 6 },
@@ -627,19 +630,27 @@ export default function Home() {
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
+                  minHeight: "250px", // ✅ keeps consistency
+                  height: "auto", // ✅ grows with text
                 }}
               >
                 <Typography variant="h6" sx={{ fontWeight: "bold", color: "#333" }}>
                   🤝 Team Collaboration
                 </Typography>
-                <Typography variant="body1" sx={{ color: "#555", fontSize: "18px", lineHeight: 1.8 }}>
-                  As part of a collaborative team, I helped build a complete website platform from scratch. We followed Agile methodology and used Git, GitHub, and Trello for team coordination and version control.
+                <Typography
+                  variant="body1"
+                  sx={{ color: "#555", fontSize: "18px", lineHeight: 1.8 }}
+                >
+                  As part of a collaborative team, I helped build a complete website
+                  platform from scratch. We followed Agile methodology and used Git,
+                  GitHub, and Trello for team coordination and version control.
                 </Typography>
               </Box>
             </Box>
           </Box>
         </div>
       </Box>
+
 
 
 
