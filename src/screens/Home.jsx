@@ -35,13 +35,6 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { ThemeContext } from "../ThemeContext";
 import { motion } from "framer-motion";
 
-
-
-
-
-
-
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -64,15 +57,13 @@ const fadeIn = {
 
 
 export default function Home() {
-  const theme = useTheme(); // ✅ Moved up
+  const theme = useTheme(); 
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorEl, setAnchorEl] = useState(null);
   const { toggleTheme, mode } = useContext(ThemeContext);
 
 
   const handleMenu = (event) => setAnchorEl(event.currentTarget);
-  // const handleClose = () => setAnchorEl(null);
-
   const titles = [
     "Full Stack Developer",
     "Web Developer",
@@ -213,52 +204,18 @@ export default function Home() {
 
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+
       <AppBar position="fixed" sx={{ background: 'white', boxShadow: 3 }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Typography
             variant="h6"
             sx={{
-              // background: 'linear-gradient(90deg, #0A66C2, #4A90E2, #0072b1)',
-              // backgroundClip: 'text',
-              // WebkitBackgroundClip: 'text',
-              // WebkitTextFillColor: 'transparent',
               fontWeight: "bold",
               color: "#960D51"
             }}
           >
             Miss Sandhya..
           </Typography>
-
-
-          
-
-
-          {/* <Button
-            onClick={toggleTheme}
-            variant="outlined"
-            sx={{ textTransform: "none", borderRadius: "20px", ml: 2 }}
-          >
-            {mode === "light" ? "Dark Mode" : "Light Mode"}
-          </Button> */}
-
-          <IconButton
-            onClick={toggleTheme}
-            sx={{
-              ml: 2,
-              color: mode === "light" ? "#000" : "#fff",
-              border: "1px solid",
-              borderColor: mode === "light" ? "#ccc" : "#555",
-              borderRadius: "50%",
-              p: 1,
-              backgroundColor: mode === "light" ? "#f5f5f5" : "#222",
-              transition: "all 0.3s",
-            }}
-          >
-            {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-          </IconButton>
-
-
-
 
           {isMobile ? (
             <>
@@ -320,18 +277,6 @@ export default function Home() {
           
           )}
 
-          {/* <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button variant="outlined" sx={{ borderRadius: '30px', textTransform: 'none' }}>
-              <SaveAltIcon sx={{ height: 20 }} /> Cv
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{ borderRadius: '30px', textTransform: 'none' }}
-              onClick={() => handleScroll('contact')}
-            >
-              <PermContactCalendarIcon sx={{ height: 20 }} /> Contact
-            </Button>
-          </Box> */}
         </Toolbar>
       </AppBar>
 
@@ -357,7 +302,7 @@ export default function Home() {
                   height: "300px",
                   boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.3)",
                   borderRadius: "50%",
-                  border: "4px solid transparent",
+                  border: "5px solid #960D51",
                   overflow: "hidden",
                   transition: "0.4s",
                 }}
@@ -479,7 +424,7 @@ export default function Home() {
             {/* Left Info Box */}
             <Box
               sx={{
-                height: 500,
+                height: 450,
                 width: { xs: "100%", md: 470 },
                 p: 4,
                 display: "flex",
@@ -534,7 +479,7 @@ export default function Home() {
             {/* Right Cards */}
             <Box
               sx={{
-                height: 500,
+                height: 450,
                 width: { xs: "100%", md: 470 },
                 display: "flex",
                 alignItems: "center",
@@ -628,18 +573,16 @@ export default function Home() {
         >
           Experience
         </Typography>
-        <div id="experience" className="bg-gray-100 py-10 px-4 flex  justify-center">
+        <div id="experience" className=" py-10 px-4 flex  justify-center">
+          {/* <div className="hidden lg:block h-[450px] w-[10px] bg-gradient-to-b from-[#960D51] via-purple-400 to-pink-500 rounded-full animate-pulse" /> */}
 
           <Box
             sx={{
-              // width: "100%",
-              // maxWidth: "1000px",
+
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              // backgroundColor: "#fff",
-              // borderRadius: 3,
-              // boxShadow: 4,
+
               padding: { xs: 3, md: 6 },
             }}
           >
@@ -647,8 +590,7 @@ export default function Home() {
 
             <Box
               sx={{
-                width: "100%",
-                // height:"350px",
+                width: "90%",
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
                 gap: 4,
@@ -657,7 +599,6 @@ export default function Home() {
             >
               <Box
                 sx={{
-                  // background: "red",
                   height:"300px",
                   flex: 1,
                   display: "flex",
@@ -671,14 +612,13 @@ export default function Home() {
                 <Typography variant="h6" sx={{ fontWeight: "bold", color: "#333" }}>
                   🗓️ 1 Year of Full Stack Development
                 </Typography>
-                <Typography variant="body1" sx={{ color: "#555", lineHeight: 1.8 }}>
+                <Typography variant="body1" sx={{ color: "#555", fontSize: "18px", lineHeight: 1.8 }}>
                   Over the past year, I have worked on designing and developing responsive web applications using the MERN stack — MongoDB, Express.js, React, and Node.js. I focused on frontend UI/UX and backend RESTful API integration.
                 </Typography>
               </Box>
 
               <Box
                 sx={{
-                  // background: "yellow",
                   height: "300px",
                   borderRadius: 3,
                   boxShadow: 4,
@@ -692,7 +632,7 @@ export default function Home() {
                 <Typography variant="h6" sx={{ fontWeight: "bold", color: "#333" }}>
                   🤝 Team Collaboration
                 </Typography>
-                <Typography variant="body1" sx={{ color: "#555", lineHeight: 1.8 }}>
+                <Typography variant="body1" sx={{ color: "#555", fontSize: "18px", lineHeight: 1.8 }}>
                   As part of a collaborative team, I helped build a complete website platform from scratch. We followed Agile methodology and used Git, GitHub, and Trello for team coordination and version control.
                 </Typography>
               </Box>
@@ -718,7 +658,7 @@ export default function Home() {
             flexDirection: { xs: "column", md: "row" },
             gap: 4,
             justifyContent: "center",
-            alignItems: "stretch",
+            alignItems: "center",
             flexWrap: "wrap",
           }}
         >
@@ -749,7 +689,7 @@ export default function Home() {
               />
             </Box>
 
-            <Typography variant="body2" sx={{ lineHeight: 1.7, color: "#444" }}>
+            <Typography variant="body2" sx={{ lineHeight: 1.7, fontSize: "18px", color: "#444" }}>
               The primary objective of the Ticket Booking Website is to develop a real-time,
               user-friendly, and efficient web application that enables users to browse,
               book, and manage tickets for services such as movies, events, travel, or shows.
@@ -773,6 +713,7 @@ export default function Home() {
           <Box
             sx={{
               maxWidth: "500px",
+              height: "625px",
               flex: 1,
               p: 4,
               bgcolor: "#F8F8FF",
@@ -796,7 +737,7 @@ export default function Home() {
               />
             </Box>
 
-            <Typography variant="body2" sx={{ lineHeight: 1.7, color: "#444" }}>
+            <Typography variant="body2" sx={{ lineHeight: 1.7, fontSize: "18px", color: "#444" }}>
               A responsive e-commerce platform where users can browse products, add to cart,
               and place orders with ease.
               <br />
@@ -828,7 +769,6 @@ export default function Home() {
           <div className=" w-full max-w-5xl rounded-lg p-6 mb-6 flex flex-col md:flex-row justify-around items-center gap-6">
             <Box
               sx={{
-                // bgcolor: "pink",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
@@ -846,7 +786,6 @@ export default function Home() {
 
             <Box
               sx={{
-                // bgcolor: "orange",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
@@ -865,7 +804,6 @@ export default function Home() {
 
             <Box
               sx={{
-                // bgcolor: "lightgreen",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
@@ -906,7 +844,6 @@ export default function Home() {
 
             <Box
               sx={{
-                // bgcolor: "aqua",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
@@ -925,7 +862,6 @@ export default function Home() {
 
             <Box
               sx={{
-                // bgcolor: "burlywood",
                 color: "black",
                 p: 2,
                 borderRadius: 2,
